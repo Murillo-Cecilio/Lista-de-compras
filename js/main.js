@@ -2,11 +2,13 @@ let listaDeItens = [];
 
 const form = document.getElementById("form-itens");
 const itensInput = document.getElementById("receber-item");
+const ulItens = document.getElementById("lista-de-itens");
 
 //Criando interatividade com o botão da linha 24 do HTML, type submit
 form.addEventListener("submit", function (evento) {
     evento.preventDefault()
-    salvarItem()
+    salvarItem();
+    mostrarItem();
 });
 
 function salvarItem() {
@@ -21,9 +23,26 @@ function salvarItem() {
         //push para inserir e clonar objetos e colocar na lista
         listaDeItens.push({
             valor: comprasItem
-        })
+        });
     }
 
 
     console.log(listaDeItens);
+}
+
+function mostrarItem() {
+    ulItens.innerHTML = '';
+    listaDeItens.forEach((elemento, index) => {
+        ulItens.innerHTML += `
+    <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
+        <div>
+            <input type="checkbox" class="is-clickable" />
+            <input type="text" class="is-size-5" value="${elemento.valor}"></input>
+        </div>
+        <div>
+            <i class="fa-solid fa-trash is-clickable deletar"></i>
+        </div>
+    </li>
+    `
+    });
 }
