@@ -55,10 +55,10 @@ function mostrarItem() {
     <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
         <div>
             <input type="checkbox" class="is-clickable" />
-            <input type="text" class="is-size-5" value="${elemento.valor}"></input>
+            <input type="text" class="is-size-5" value="${elemento.valor}" ${index !== Number(itemAEditar) ? 'disabled' : ''}></input>
         </div>
         <div>
-            <button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button><i class="fa-regular is-clickable fa-pen-to-square editar"></i>
+            ${ index === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'}
             <i class="fa-solid fa-trash is-clickable deletar"></i>
         </div>
     </li>
@@ -99,5 +99,9 @@ function mostrarItem() {
 
 function salvarEdicao() {
     const itemAEditado = document.querySelector(`[data-value="${itemAEditar}"] input[type="text"]`);
-    console.log(itemAEditado.value);
+    // console.log(itemAEditado.value);
+    listaDeItens[itemAEditar].valor = itemAEditado.value;
+    console.log(listaDeItens);
+    itemAEditar = 1;
+    mostrarItem()
 }
