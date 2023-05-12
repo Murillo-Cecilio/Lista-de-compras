@@ -5,9 +5,19 @@ const form = document.getElementById("form-itens");
 const itensInput = document.getElementById("receber-item");
 const ulItens = document.getElementById("lista-de-itens");
 const ulItensComprados = document.getElementById("itens-comprados");
+const listaRecuperada = localStorage.getItem('listaDeItens');
 
 function atualizaLocalStorage() {
     localStorage.setItem('listaDeItens', JSON.stringify(listaDeItens));
+}
+
+// (valores que retorna false >>, valores omitidos, 0, null, NaN, undefined, "", false)
+
+if (listaRecuperada) {
+    listaDeItens = JSON.parse(listaRecuperada);
+    mostrarItem()
+} else {
+    listaDeItens = [];
 }
 
 //Criando interatividade com o botão da linha 24 do HTML, type submit
@@ -33,8 +43,6 @@ function salvarItem() {
             checar: false
         });
     }
-
-
     itensInput.value = '';
 }
 
