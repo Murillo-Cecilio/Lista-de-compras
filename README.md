@@ -26,13 +26,8 @@ Código modelo da li "Lista de compras":
         </div>
     </li>
 
-Input com código refatorado:
+Digite com código refatorado:
 
-    <div>
-        <input type="checkbox" checked class="is-clickable" />  
-        <span class="itens-comprados is-size-5">${elemento.valor}</span>
-    </div>
 
-Ícones de edição:
 
-    <i class="fa-regular fa-floppy-disk is-clickable"></i><i class="fa-regular is-clickable fa-pen-to-square editar"></i>
+
