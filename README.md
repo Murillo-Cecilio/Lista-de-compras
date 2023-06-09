@@ -23,10 +23,7 @@ Código modelo da li "Lista de compras":
         </div>
         <div>
             <i class="fa-solid fa-trash is-clickable deletar"></i>
-        </div>
-    </li>
 
-Digite com código refatorado:
 
 
 
