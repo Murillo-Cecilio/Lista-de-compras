@@ -1,4 +1,4 @@
-#Projeto Lista de Compras
+# Projeto Lista de Compras
 
 ## Tecnologias
 - Javascript
