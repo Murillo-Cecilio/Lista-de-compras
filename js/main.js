@@ -6,7 +6,6 @@ const itensInput = document.getElementById("receber-item");
 const ulItens = document.getElementById("lista-de-itens");
 const ulItensComprados = document.getElementById("itens-comprados");
 const listaRecuperada = localStorage.getItem('listaDeItens');
-const resultadoCompras = document.getElementById("resultado-compras")
 
 function atualizaLocalStorage() {
     localStorage.setItem('listaDeItens', JSON.stringify(listaDeItens));
