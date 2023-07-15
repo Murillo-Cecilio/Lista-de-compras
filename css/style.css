@@ -21,7 +21,7 @@ text-decoration: line-through;
 }
 
 .borda-lista {
-    border-bottom: dotted 2px blue;
+    border-bottom: dotted 2px rgba(0, 0, 255, 0.856);
 }
 
 input:disabled {
